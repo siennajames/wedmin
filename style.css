@@ -1,0 +1,67 @@
+:root{
+  --ink:#1f2a33;--muted:#54606a;--rule:#d7dde1;--sky:#2a6cb6;--ochre:#a3561a;--panel:rgba(247,249,250,.9);
+  --display:"Bodoni Moda",Didot,Georgia,serif;
+  --body:Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--body);color:var(--ink);font-size:17px;line-height:1.6;background:#3a7cc6}
+.photo{background:#3a7cc6 url(church.jpg) center bottom/cover no-repeat}
+a{color:var(--sky)}a:hover{color:#1d4f88}
+a:focus-visible,button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+.pill{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;border:1px solid rgba(255,255,255,.75);
+  background:rgba(255,255,255,.14);color:#fff;text-decoration:none;font:inherit;font-size:15px;font-weight:500;cursor:pointer;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.pill:hover{background:rgba(255,255,255,.28);color:#fff}
+.pill[aria-current="page"]{background:#fff;border-color:#fff;color:var(--ink)}
+.pill.rsvp{background:var(--ochre);border-color:var(--ochre);font-weight:600}
+.pill.rsvp:hover{filter:brightness(1.08)}
+
+/* Home */
+.home{position:relative;width:100%;aspect-ratio:4/3;min-height:max(680px,100vh);color:#fff}
+.home-text{position:absolute;inset:0 0 auto;padding:7% 16px 0;display:flex;flex-direction:column;align-items:center;text-align:center;text-shadow:0 1px 22px rgba(15,50,95,.35)}
+.eyebrow{margin:0;font-size:clamp(11px,1.1vw,14px);letter-spacing:.26em;text-transform:uppercase;font-weight:600}
+.home h1{margin:.35em 0 0;font-family:var(--display);font-weight:400;font-size:clamp(52px,9vw,140px);line-height:1;letter-spacing:-.01em}
+.when{margin:.8em 0 0;font-size:clamp(15px,1.6vw,22px);font-weight:500}
+.when em{font-family:var(--display);font-size:1.15em}
+.home nav{margin-top:clamp(28px,3.5vw,52px);display:flex;flex-wrap:wrap;justify-content:center;gap:10px;text-shadow:none}
+
+/* Inner pages */
+.page{min-height:100vh;padding:0 16px 72px;background-attachment:fixed}
+.top{max-width:1040px;margin:0 auto;padding:24px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:var(--display);font-size:30px;color:#fff;text-decoration:none;text-shadow:0 1px 16px rgba(15,50,95,.35)}
+.brand:hover{color:#fff}
+.top nav{display:flex;flex-wrap:wrap;gap:8px}
+.panel{max-width:1040px;margin:48px auto 0;background:var(--panel);border-radius:6px;padding:clamp(24px,5vw,56px);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.panel h1{margin:0 0 8px;font-family:var(--display);font-weight:500;font-size:clamp(36px,4.5vw,56px);line-height:1.1;text-wrap:balance}
+.lede{margin:0;color:var(--muted);max-width:38rem}
+
+.day{margin-top:40px;display:flex;flex-direction:column;gap:36px}
+.part{display:flex;flex-wrap:wrap;gap:16px 32px;border-top:1px solid var(--rule);padding-top:20px}
+.part h2{flex:0 0 140px;margin:0;padding-top:6px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ochre);font-weight:600}
+.items{flex:999 1 420px;min-width:0;display:flex;flex-direction:column;gap:16px;list-style:none;margin:0;padding:0}
+.item{display:flex;gap:20px;align-items:baseline}
+.time{flex:0 0 76px;font-weight:600;color:var(--muted);font-size:15px;font-variant-numeric:tabular-nums}
+.what{min-width:0}
+.what strong{display:block;font-family:var(--display);font-weight:400;font-size:24px;line-height:1.25}
+.what span{color:var(--muted);font-size:15px}
+.key .time,.key strong{color:var(--sky)}
+.key strong{font-style:italic}
+
+.facts{margin:32px 0 0;display:flex;flex-direction:column;gap:14px}
+.facts div{display:flex;flex-wrap:wrap;gap:4px 24px;border-top:1px solid var(--rule);padding-top:14px}
+.facts dt{flex:0 0 120px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600;padding-top:3px}
+.facts dd{margin:0}
+.soon{margin-top:32px;padding:44px 16px;border:1px dashed #c3ccd2;border-radius:4px;text-align:center}
+.soon p{margin:0;font-family:var(--display);font-style:italic;font-size:24px}
+.soon small{display:block;margin-top:4px;color:var(--muted);font-size:15px}
+.btn{display:inline-flex;align-items:center;min-height:44px;margin-top:28px;padding:0 20px;border-radius:999px;border:1px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:500;font-size:15px}
+.btn:hover{border-color:var(--sky)}
+
+@media (max-width:640px){
+  .top{justify-content:center}
+  .item{gap:14px}.time{flex-basis:64px}
+}
+@supports (-webkit-touch-callout:none){.page{background-attachment:scroll}}
